@@ -65,7 +65,7 @@ CSV file begins to be parsed.
 Uses the accessor function type to help distribute data.
 Type is below this d3.csv block.
 */
-d3.csv("Average.csv", type, function(error, data){
+d3.csv("{{ url_for('static', filename='csv/Average.csv') }}", type, function(error, data){
 	exCities = data.columns.slice(1).map(function(id) {
         return {
             id: id,
@@ -76,7 +76,7 @@ d3.csv("Average.csv", type, function(error, data){
 	
 })
 
-d3.csv("EPC_2000_2010_new.csv", type, function(error, data) {
+d3.csv("{{ url_for('static', filename='csv/EPC_2000_2010_new.csv') }}", type, function(error, data) {
     if (error) throw error;
     /*
     Essentially uses javascripts Map function over and over again to create a finished
